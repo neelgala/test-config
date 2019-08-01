@@ -1,0 +1,5 @@
+deploy:
+  provider: pypi
+  user: $pypiusername
+  password: $pypipassword
+  distributions: "sdist"

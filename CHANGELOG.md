@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.0] - 2019-07-29
+## [1.4.0] - 2019-07-29
 ### Added
 - Added work_dir as arg and always outputs to that dir.
 - Added reset vector and nmi vector to platform.yaml
