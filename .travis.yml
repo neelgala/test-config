@@ -13,9 +13,9 @@ deploy:
     skip_clean: true
     on:
       branch: master
-#  - provider: pypi
-#    user: $pypiusername
-#    password: $pypipassword
-#    distributions: "sdist"
-#    on:
-#      branch: master
+  - provider: pypi
+    user: $pypiusername
+    password: $pypipassword
+    distributions: "sdist"
+    on:
+      branch: master
