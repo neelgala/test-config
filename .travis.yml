@@ -1,8 +1,8 @@
+language: python
 deploy:
   provider: pypi
   user: $pypiusername
   password: $pypipassword
   distributions: "sdist"
   on:
-    repo: test-config
     branch: master
