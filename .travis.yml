@@ -1,13 +1,21 @@
 language: python
 script:
   - touch foo
+before_deploy:
   - export TAGNAME=$(grep -P "^## .*?" CHANGELOG.md -m1 | awk '{print $2}' |awk '{print $1}')
   - git tag $TAGNAME
-  - git push --tags
-#deploy:
-#  provider: pypi
-#  user: $pypiusername
-#  password: $pypipassword
-#  distributions: "sdist"
-#  on:
-#    branch: master
+deploy:
+  - provider: releases
+    api_key:
+      secure: $github_access_token
+    file_glob: true
+    file: .
+    skip_clean: true
+    on:
+      branch: master
+#  - provider: pypi
+#    user: $pypiusername
+#    password: $pypipassword
+#    distributions: "sdist"
+#    on:
+#      branch: master
