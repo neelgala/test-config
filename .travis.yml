@@ -1,6 +1,6 @@
-sudo: required
-dist: xenial
 language: python
+script:
+  - touch foo
 deploy:
   provider: pypi
   user: $pypiusername
