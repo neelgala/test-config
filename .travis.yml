@@ -13,10 +13,11 @@ deploy:
     api_key:
       secure: $github_access_token
     file_glob: true
-    file: ./docs/build/latex/riscv_config.pdf
+    file: docs/build/latex/*.pdf
     skip_cleanup: true
     on:
       branch: master
+      tags: false
 #  - provider: pypi
 #    user: $pypiusername
 #    password: $pypipassword
