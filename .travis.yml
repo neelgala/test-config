@@ -6,8 +6,8 @@ script:
   - cd docs/
   - pip install -r requirements.txt
   - make latexpdf
-before_deploy:
   - export TAGNAME=$(grep -P "^## .*?" CHANGELOG.md -m1 | awk '{print $2}' |awk '{print $1}')
+before_deploy:
   - git tag $TAGNAME
 deploy:
   - provider: releases
@@ -18,7 +18,6 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
-      tags: false
 #  - provider: pypi
 #    user: $pypiusername
 #    password: $pypipassword
