@@ -18,8 +18,9 @@ deploy:
   file: docs/build/latex/*.pdf
   skip_cleanup: true
   on:
-    on: neelgala/test-config
+    repo: neelgala/test-config
     branch: master
+    tags: false
 #  - provider: pypi
 #    user: $pypiusername
 #    password: $pypipassword
