@@ -13,7 +13,7 @@ deploy:
     api_key:
       secure: $github_access_token
     file_glob: true
-    file: ./docs/build/latex/RIFLE.pdf
+    file: ./docs/build/latex/riscv_config.pdf
     skip_clean: true
     on:
       branch: master

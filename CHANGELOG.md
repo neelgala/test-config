@@ -2,6 +2,9 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.2 - 2019-07-30
+### Fixed
+- Travic CI
 ## 0.1.1 - 2019-07-30
 ### Changed
 - Work directory isnt deleted if the directory exists, although the files of the same name will be overwritten.
