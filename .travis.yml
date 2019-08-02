@@ -1,19 +1,25 @@
 language: python
+sudo: required
+before_install:
+  - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
   - export TAGNAME=$(grep -P "^## .*?" CHANGELOG.md -m1 | awk '{print $2}' |awk '{print $1}')
   - git tag $TAGNAME
+  - cd docs/
+  - pip install -r requirements.txt
+  - make latexpdf
 deploy:
   - provider: releases
     api_key:
       secure: $github_access_token
     file_glob: true
-    file: .
+    file: ./docs/build/latex/RIFLE.pdf
     skip_clean: true
     on:
       branch: master
-  - provider: pypi
-    user: $pypiusername
-    password: $pypipassword
-    distributions: "sdist"
-    on:
-      branch: master
+#  - provider: pypi
+#    user: $pypiusername
+#    password: $pypipassword
+#    distributions: "sdist"
+#    on:
+#      branch: master
