@@ -14,7 +14,7 @@ deploy:
       secure: $github_access_token
     file_glob: true
     file: ./docs/build/latex/riscv_config.pdf
-    skip_clean: true
+    skip_cleanup: true
     on:
       branch: master
 #  - provider: pypi
